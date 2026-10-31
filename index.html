@@ -1,0 +1,556 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#071526">
+<title>Pencapaian Pramuka Garuda 2027</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+:root{
+ --gold:#ffd166;
+ --blue:#48c6ef;
+ --dark:#071526;
+ --glass:rgba(255,255,255,.09);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:85px}
+body{
+ font-family:Poppins,sans-serif;
+ color:white;background:#071526;overflow-x:hidden;
+}
+body:before{
+ content:"";position:fixed;inset:0;z-index:-3;
+ background:linear-gradient(120deg,rgba(3,12,29,.92),rgba(3,18,39,.78),rgba(3,10,25,.94)),url("garuda.PNG") center/cover no-repeat;
+}
+body:after{
+ content:"";position:fixed;inset:0;z-index:-2;
+ background:radial-gradient(circle at 50% 20%,transparent,rgba(0,0,0,.45));
+ pointer-events:none;
+}
+#particles{position:fixed;inset:0;z-index:-1;pointer-events:none}
+nav{
+ position:fixed;z-index:100;top:0;left:0;width:100%;
+ min-height:65px;padding:12px 5%;
+ display:flex;justify-content:space-between;align-items:center;
+ background:#071526ed;backdrop-filter:blur(15px);
+ border-bottom:1px solid #ffffff18;
+}
+.brand{font-size:14px;font-weight:800;color:var(--gold);letter-spacing:1px}
+.music{
+ background:#ffffff12;color:white;border:1px solid #ffffff44;
+ padding:9px 15px;border-radius:30px;cursor:pointer;font-family:inherit;
+}
+header{
+ min-height:100svh;display:flex;align-items:center;
+ justify-content:center;text-align:center;padding:110px 20px 65px;
+}
+.hero{width:100%;max-width:950px;animation:show 1.5s ease}
+@keyframes show{from{opacity:0;transform:translateY(50px)}to{opacity:1;transform:translateY(0)}}
+.logo{
+ width:100px;height:100px;border:2px solid var(--gold);
+ border-radius:50%;display:grid;place-items:center;margin:0 auto 25px;
+ font-size:48px;box-shadow:0 0 35px #ffd16655;animation:float 3s infinite ease-in-out;
+}
+@keyframes float{50%{transform:translateY(-12px)}}
+.hero h1{font-size:clamp(35px,7vw,76px);font-weight:900;line-height:1.15;letter-spacing:2px;text-shadow:0 5px 30px #000}
+.hero h1 span{color:var(--gold)}
+.hero p{max-width:700px;margin:25px auto;line-height:1.9;color:#d6e5f5;font-size:15px}
+.tag{display:inline-block;border:1px solid #ffd16688;color:var(--gold);padding:9px 22px;border-radius:30px;letter-spacing:3px;font-size:12px;margin-bottom:25px}
+.btn{
+ display:inline-block;text-decoration:none;border:0;cursor:pointer;
+ padding:14px 28px;border-radius:35px;font-family:inherit;
+ font-weight:700;margin:8px;transition:.3s;
+}
+.btn-gold{color:#172238;background:linear-gradient(120deg,#ffe29a,#e8aa37)}
+.btn-outline{color:white;border:1px solid #ffffff88;background:#ffffff10}
+.btn:hover{transform:translateY(-5px)}
+section{padding:85px 6%}
+.section-title{text-align:center;margin-bottom:40px}
+.section-title small{color:var(--gold);letter-spacing:4px;font-weight:700}
+.section-title h2{font-size:clamp(25px,4vw,42px);margin-top:12px}
+.section-title p{color:#aabbd0;font-size:13px;margin-top:10px}
+.progress-box{
+ max-width:850px;margin:0 auto 50px;padding:30px;
+ background:var(--glass);border:1px solid #ffffff20;
+ border-radius:22px;backdrop-filter:blur(15px);
+}
+.progress-top{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-bottom:15px;font-weight:700;font-size:14px}
+.progress-bar{height:13px;background:#ffffff20;border-radius:20px;overflow:hidden}
+.progress-fill{width:0%;height:100%;background:linear-gradient(90deg,#e9a82e,#ffe69b);border-radius:20px;transition:width .5s}
+.progress-info{color:#aabbd0;margin-top:12px;font-size:12px}
+.grid{
+ display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,270px),1fr));
+ gap:22px;max-width:1300px;margin:auto;
+}
+.card{
+ position:relative;background:linear-gradient(145deg,rgba(255,255,255,.12),rgba(255,255,255,.035));
+ border:1px solid #ffffff20;border-radius:22px;padding:25px;
+ overflow:hidden;backdrop-filter:blur(12px);transition:.35s;min-width:0;
+}
+.card:before{
+ content:"";position:absolute;width:130px;height:130px;
+ background:#ffd16615;border-radius:50%;right:-50px;top:-50px;pointer-events:none;
+}
+.card:hover{transform:translateY(-6px);border-color:#ffd16699;box-shadow:0 15px 45px #0005}
+.card-head{display:flex;align-items:center;gap:14px;margin-bottom:18px}
+.card-icon{
+ width:53px;height:53px;flex-shrink:0;display:grid;place-items:center;
+ background:#ffd16618;border:1px solid #ffd16655;border-radius:16px;font-size:26px;
+}
+.card h3{font-size:16px;color:var(--gold);line-height:1.5}
+.card small{color:#9cb3cc;font-size:10px;letter-spacing:2px}
+.card ul{list-style:none}
+.card li{
+ display:flex;gap:10px;align-items:flex-start;font-size:13px;
+ line-height:1.8;padding:11px 0;border-bottom:1px solid #ffffff13;
+}
+.card li:last-child{border:0}
+.card input{accent-color:#ffd166;width:18px;height:18px;margin-top:4px;flex-shrink:0;cursor:pointer}
+.card li span{overflow-wrap:anywhere}
+.card li:has(input:checked) span{color:#aabbd0;text-decoration:line-through}
+.card-footer{margin-top:18px;display:flex;justify-content:space-between;gap:5px;color:#9cb3cc;font-size:10px}
+.card-footer strong{color:var(--gold)}
+.chapter{
+ max-width:1300px;margin:0 auto 35px;
+ padding:22px;border:1px solid #ffd16666;
+ border-radius:20px;background:linear-gradient(110deg,#ffd16620,#ffffff08);
+ text-align:center;
+}
+.chapter h3{color:var(--gold);font-size:clamp(20px,4vw,30px)}
+.chapter p{color:#c5d5e7;font-size:12px;margin-top:8px;line-height:1.8}
+.quote{
+ max-width:850px;margin:20px auto;padding:45px 25px;
+ text-align:center;border:1px solid #ffd16655;
+ background:#ffffff09;border-radius:25px;
+}
+.quote h2{font-size:clamp(22px,4vw,35px);color:var(--gold)}
+.quote p{margin-top:15px;color:#d1dceb;line-height:1.9;font-size:14px}
+footer{padding:35px 20px;text-align:center;background:#020a15;border-top:1px solid #ffffff18;color:#9cb3cc;font-size:12px;line-height:2}
+footer strong{color:var(--gold)}
+.music-control{position:fixed;right:17px;bottom:17px;z-index:90}
+.music-control button{
+ background:linear-gradient(120deg,#ffe29a,#e8aa37);color:#071526;
+ border:0;padding:13px 17px;border-radius:50px;font-weight:800;
+ cursor:pointer;box-shadow:0 5px 25px #0005;font-family:inherit;font-size:12px;
+}
+@media(max-width:600px){
+ nav{padding:11px 14px;min-height:58px}
+ .brand{font-size:11px}.music{padding:8px 11px;font-size:10px}
+ header{padding:95px 17px 55px}
+ .logo{width:78px;height:78px;font-size:38px}
+ .hero h1{font-size:clamp(32px,10vw,48px);letter-spacing:0}
+ .hero p{font-size:12px;line-height:1.8}
+ .tag{font-size:9px;letter-spacing:2px}
+ .btn{padding:12px 18px;font-size:11px}
+ section{padding:65px 15px}
+ .section-title h2{font-size:25px}
+ .section-title p{font-size:11px}
+ .progress-box{padding:19px;margin-bottom:35px}
+ .progress-top{font-size:12px}
+ .grid{grid-template-columns:1fr;gap:15px}
+ .card{padding:21px;border-radius:18px}
+ .card h3{font-size:15px}
+ .card li{font-size:12px;line-height:1.75}
+ .quote{padding:30px 18px}.quote p{font-size:12px}
+ footer{font-size:10px}
+ .music-control{right:12px;bottom:12px}
+ .music-control button{padding:11px 14px;font-size:10px}
+}
+@media(min-width:601px) and (max-width:900px){
+ .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ section{padding-left:4%;padding-right:4%}
+}
+@media(prefers-reduced-motion:reduce){
+ *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}
+}
+</style>
+</head>
+
+<body>
+<canvas id="particles"></canvas>
+
+<nav>
+ <div class="brand"> GARUDA 2027</div>
+ <button class="music" onclick="toggleMusic()" id="musicNav">♪ MUSIK OFF</button>
+</nav>
+
+<audio id="audio" loop>
+ <source src="MUSIK.mp3" type="audio/mpeg">
+</audio>
+
+<header>
+ <div class="hero">
+  
+  <div class="tag">PRAMUKA GARUDA • 2027</div>
+  <h1>PENCAPAIAN<br><span>PRAMUKA GARUDA</span></h1>
+  <p>Pembukaan akan dimulai pada Januari 2027. Artinya, mulai sekarang kalian harus mempersiapkan diri dengan berlandaskan tiga hal: pertama, niat dan keinginan dari diri sendiri serta dukungan orang tua; kedua, jangan menjalankannya karena keterpaksaan, tetapi tumbuhkan kesadaran dan tanggung jawab; ketiga, jika ingin berkembang, bersiaplah menghadapi ketidaknyamanan, mau terus belajar, berusaha, dan siap lelah dalam prosesnya. Renungkan malam sebelum tidur</p>
+  <a href="#pencapaian" class="btn btn-gold">MULAI PENCAPAIAN ↓</a>
+  <a href="#scouting" class="btn btn-outline">SCOUTING SKILL</a>
+ </div>
+</header>
+
+<section id="target">
+ <div class="section-title">
+  <small>YANG HARUS DIKUASAI</small>
+  <h2>TARGET PENCAPAIAN</h2>
+  <p>JIKA TIDAK MENGERTI HUBUNGI DAN BERTANYA PADA PEMBINA</p>
+ </div>
+
+ <div class="progress-box">
+  <div class="progress-top">
+   <span>PELAJARI DAN KUASAI SATU DEMI SATU JANGAN SEKALIGUS</span>
+   <span id="percentage">0%</span>
+  </div>
+  <div class="progress-bar"><div class="progress-fill" id="progress"></div></div>
+  <div class="progress-info" id="progressInfo">0 dari 32 target telah diselesaikan.</div>
+ </div>
+
+ <div class="grid" id="pencapaian">
+
+  <article class="card">
+   <div class="card-head"><div class="card-icon">🔬</div><div><small>MATA PELAJARAN 01</small><h3>ILMU PENGETAHUAN ALAM</h3></div></div>
+   <ul>
+    <li><input type="checkbox" class="task"><span>Memahami teknik penjernihan air.</span></li>
+    <li><input type="checkbox" class="task"><span>Memahami cara mengukur deras arus sungai dengan pengawasan dan prosedur keselamatan.</span></li>
+    <li><input type="checkbox" class="task"><span>Mampu membuat pupuk kompos dari bahan organik.</span></li>
+   </ul>
+   <div class="card-footer"><span>SCIENCE SKILL</span><strong>IPA</strong></div>
+  </article>
+
+  <article class="card">
+   <div class="card-head"><div class="card-icon">📐</div><div><small>MATA PELAJARAN 02</small><h3>MATEMATIKA</h3></div></div>
+   <ul>
+    <li><input type="checkbox" class="task"><span>Mengukur tinggi pohon menggunakan konsep kesebangunan dan bayangan.</span></li>
+    <li><input type="checkbox" class="task"><span>Memahami sudut istimewa dengan bantuan tongkat dan busur derajat.</span></li>
+    <li><input type="checkbox" class="task"><span>Memahami navigasi dan arah menggunakan sudut serta perhitungan sederhana.</span></li>
+   </ul>
+   <div class="card-footer"><span>MATHEMATICS</span><strong>MATEMATIKA</strong></div>
+  </article>
+
+  <article class="card">
+   <div class="card-head"><div class="card-icon">🎤</div><div><small>MATA PELAJARAN 03</small><h3>BAHASA INDONESIA</h3></div></div>
+   <ul>
+    <li><input type="checkbox" class="task"><span>Mampu melakukan public speaking di depan umum.</span></li>
+    <li><input type="checkbox" class="task"><span>Mampu menyusun dan menyampaikan pidato dengan baik.</span></li>
+   </ul>
+   <div class="card-footer"><span>COMMUNICATION</span><strong>B. INDONESIA</strong></div>
+  </article>
+
+  <article class="card">
+   <div class="card-head"><div class="card-icon">🌎</div><div><small>MATA PELAJARAN 04</small><h3>BAHASA INGGRIS</h3></div></div>
+   <ul>
+    <li><input type="checkbox" class="task"><span>Mampu melakukan dialog bahasa Inggris dengan guru mata pelajaran.</span></li>
+    <li><input type="checkbox" class="task"><span>Memahami dan membuat Procedure Text.</span></li>
+   </ul>
+   <div class="card-footer"><span>GLOBAL LANGUAGE</span><strong>ENGLISH</strong></div>
+  </article>
+
+  <article class="card">
+   <div class="card-head"><div class="card-icon">🇮🇩</div><div><small>MATA PELAJARAN 05</small><h3>PPKn</h3></div></div>
+   <ul>
+    <li><input type="checkbox" class="task"><span>Menghafal dan memahami Pancasila.</span></li>
+    <li><input type="checkbox" class="task"><span>Menghafal Pembukaan UUD Negara Republik Indonesia Tahun 1945.</span></li>
+    <li><input type="checkbox" class="task"><span>Menghafal dan memahami Sumpah Pemuda.</span></li>
+    <li><input type="checkbox" class="task"><span>Memahami dan menghafal teks Proklamasi Kemerdekaan.</span></li>
+   </ul>
+   <div class="card-footer"><span>NATIONAL CHARACTER</span><strong>PPKn</strong></div>
+  </article>
+
+  <article class="card">
+   <div class="card-head"><div class="card-icon">💻</div><div><small>MATA PELAJARAN 06</small><h3>INFORMATIKA</h3></div></div>
+   <ul>
+    <li><input type="checkbox" class="task"><span>Mampu mengoperasikan Microsoft Word.</span></li>
+    <li><input type="checkbox" class="task"><span>Mampu mengoperasikan Microsoft Excel.</span></li>
+    <li><input type="checkbox" class="task"><span>Mampu membuat desain menggunakan Canva.</span></li>
+    <li><input type="checkbox" class="task"><span>Mampu menggunakan Eduting atau aplikasi editing video.</span></li>
+   </ul>
+   <div class="card-footer"><span>DIGITAL SKILL</span><strong>INFORMATIKA</strong></div>
+  </article>
+
+  <article class="card">
+   <div class="card-head"><div class="card-icon">🚑</div><div><small>MATA PELAJARAN 07</small><h3>PENDIDIKAN JASMANI</h3></div></div>
+   <ul>
+    <li><input type="checkbox" class="task"><span>Memahami pertolongan pertama pada kecelakaan (P3K).</span></li>
+    <li><input type="checkbox" class="task"><span>Memahami penanganan awal dugaan patah tulang tanpa menggerakkan bagian cedera.</span></li>
+    <li><input type="checkbox" class="task"><span>Memahami pertolongan awal pada luka kepala dan kapan meminta bantuan medis.</span></li>
+    <li><input type="checkbox" class="task"><span>Memahami pembuatan tandu darurat dan prosedur pemindahan korban di bawah pengawasan petugas terlatih.</span></li>
+   </ul>
+   <div class="card-footer"><span>HEALTH & RESCUE</span><strong>PJOK</strong></div>
+  </article>
+
+  <article class="card">
+   <div class="card-head"><div class="card-icon">🎨</div><div><small>MATA PELAJARAN 08</small><h3>SENI BUDAYA</h3></div></div>
+   <ul>
+    <li><input type="checkbox" class="task"><span>Mampu membuat hasta karya atau kerajinan tangan.</span></li>
+    <li><input type="checkbox" class="task"><span>Membuat karya kreatif dari bahan alam atau bahan daur ulang.</span></li>
+    <li><input type="checkbox" class="task"><span>Mengembangkan kreativitas, ketelitian, dan keterampilan seni.</span></li>
+   </ul>
+   <div class="card-footer"><span>CREATIVE ART</span><strong>SENI BUDAYA</strong></div>
+  </article>
+
+ </div>
+</section>
+
+<!-- BAB BARU SCOUTING SKILL -->
+<section id="scouting">
+
+ <div class="section-title">
+  <small>KETERAMPILAN PRAMUKA DAN KEPANDUAN</small>
+  <h2>SCOUTING SKILL</h2>
+  <p>MINTA BANTUAN MENTOR KAKAK PENDAMPING</p>
+ </div>
+
+ <div class="chapter">
+  <h3> SCOUTING SKILL</h3>
+  <p>SETIA SIAP SEDIA</p>
+ </div>
+
+ <div class="grid">
+
+  <!-- PIONERING -->
+  <article class="card">
+   <div class="card-head"><div class="card-icon">🪵</div><div><small>SCOUTING SKILL 01</small><h3>PIONERING</h3></div></div>
+   <ul>
+    <li><input type="checkbox" class="task"><span>Memahami fungsi tongkat dan tali dalam kegiatan pionering.</span></li>
+    <li><input type="checkbox" class="task"><span>Mengenal bentuk dan fungsi pionering tandu.</span></li>
+    <li><input type="checkbox" class="task"><span>Mengenal konstruksi pionering tiang bendera.</span></li>
+    <li><input type="checkbox" class="task"><span>Mengenal pionering bendera gantung.</span></li>
+    <li><input type="checkbox" class="task"><span>Mampu bekerja sama membuat konstruksi pionering sederhana dengan pengawasan pembina.</span></li>
+   </ul>
+   <div class="card-footer"><span>CONSTRUCTION SKILL</span><strong>PIONERING</strong></div>
+  </article>
+
+  <!-- TALI TEMALI -->
+  <article class="card">
+   <div class="card-head"><div class="card-icon">🪢</div><div><small>SCOUTING SKILL 02</small><h3>TALI TEMALI</h3></div></div>
+   <ul>
+    <li><input type="checkbox" class="task"><span>Mengenal dan mempraktikkan simpul pangkal.</span></li>
+    <li><input type="checkbox" class="task"><span>Mengenal dan mempraktikkan simpul kembar.</span></li>
+    <li><input type="checkbox" class="task"><span>Memahami ikatan sambung.</span></li>
+    <li><input type="checkbox" class="task"><span>Memahami ikatan palang.</span></li>
+    <li><input type="checkbox" class="task"><span>Mengenal simpul katrol dan kegunaannya.</span></li>
+    <li><input type="checkbox" class="task"><span>Mempraktikkan penggunaan simpul dan ikatan pada model latihan dengan pengawasan pembina.</span></li>
+   </ul>
+   <div class="card-footer"><span>KNOT & LASHING</span><strong>TALI TEMALI</strong></div>
+  </article>
+
+  <!-- MORSE -->
+  <article class="card">
+   <div class="card-head"><div class="card-icon">📡</div><div><small>SCOUTING SKILL 03</small><h3>MORSE</h3></div></div>
+   <ul>
+    <li><input type="checkbox" class="task"><span>Mengenal kode titik dan garis Morse.</span></li>
+    <li><input type="checkbox" class="task"><span>Menghafal sandi Morse huruf A sampai Z dan angka.</span></li>
+    <li><input type="checkbox" class="task"><span>Mampu membaca dan menerjemahkan pesan Morse sederhana.</span></li>
+    <li><input type="checkbox" class="task"><span>Mempraktikkan komunikasi Morse menggunakan media latihan.</span></li>
+   </ul>
+   <div class="card-footer"><span>COMMUNICATION</span><strong>MORSE</strong></div>
+  </article>
+
+  <!-- KOMPAS -->
+  <article class="card">
+   <div class="card-head"><div class="card-icon">🧭</div><div><small>SCOUTING SKILL 04</small><h3>KOMPAS & NAVIGASI</h3></div></div>
+   <ul>
+    <li><input type="checkbox" class="task"><span>Mengenal bagian-bagian kompas.</span></li>
+    <li><input type="checkbox" class="task"><span>Memahami arah mata angin.</span></li>
+    <li><input type="checkbox" class="task"><span>Mampu membaca arah menggunakan kompas.</span></li>
+    <li><input type="checkbox" class="task"><span>Memahami azimut dan sudut arah sederhana.</span></li>
+    <li><input type="checkbox" class="task"><span>Mempraktikkan navigasi pada area latihan yang aman bersama pembina.</span></li>
+   </ul>
+   <div class="card-footer"><span>MAP & DIRECTION</span><strong>NAVIGASI</strong></div>
+  </article>
+
+  <!-- SEMAPHORE -->
+  <article class="card">
+   <div class="card-head"><div class="card-icon">🚩</div><div><small>SCOUTING SKILL 05</small><h3>SEMAPHORE</h3></div></div>
+   <ul>
+    <li><input type="checkbox" class="task"><span>Mengenal sejarah dan fungsi semaphore.</span></li>
+    <li><input type="checkbox" class="task"><span>Menghafal posisi huruf semaphore A sampai Z.</span></li>
+    <li><input type="checkbox" class="task"><span>Mampu membaca dan menerjemahkan pesan semaphore.</span></li>
+    <li><input type="checkbox" class="task"><span>Mampu mengirim pesan sederhana menggunakan bendera semaphore.</span></li>
+   </ul>
+   <div class="card-footer"><span>VISUAL SIGNAL</span><strong>SEMAPHORE</strong></div>
+  </article>
+
+  <!-- PBB -->
+  <article class="card">
+   <div class="card-head"><div class="card-icon">🎖️</div><div><small>SCOUTING SKILL 06</small><h3>PERATURAN BARIS BERBARIS</h3></div></div>
+   <ul>
+    <li><input type="checkbox" class="task"><span>Memahami sikap sempurna dan istirahat.</span></li>
+    <li><input type="checkbox" class="task"><span>Mempraktikkan hadap kanan dan hadap kiri.</span></li>
+    <li><input type="checkbox" class="task"><span>Mempraktikkan balik kanan dan penghormatan.</span></li>
+    <li><input type="checkbox" class="task"><span>Memahami langkah tegap dan langkah biasa.</span></li>
+    <li><input type="checkbox" class="task"><span>Mampu mengikuti aba-aba pemimpin barisan.</span></li>
+    <li><input type="checkbox" class="task"><span>Menunjukkan kedisiplinan dan kekompakan regu.</span></li>
+   </ul>
+   <div class="card-footer"><span>DISCIPLINE</span><strong>PBB</strong></div>
+  </article>
+
+  <!-- PETA PITA -->
+  <article class="card">
+   <div class="card-head"><div class="card-icon">🗺️</div><div><small>SCOUTING SKILL 07</small><h3>PETA PITA</h3></div></div>
+   <ul>
+    <li><input type="checkbox" class="task"><span>Memahami pengertian dan fungsi peta pita.</span></li>
+    <li><input type="checkbox" class="task"><span>Mengenal simbol dan keterangan perjalanan.</span></li>
+    <li><input type="checkbox" class="task"><span>Mencatat arah dan jarak perjalanan pada kegiatan latihan.</span></li>
+    <li><input type="checkbox" class="task"><span>Mampu membuat peta pita berdasarkan rute yang diamati bersama pembina.</span></li>
+   </ul>
+   <div class="card-footer"><span>FIELD MAPPING</span><strong>PETA PITA</strong></div>
+  </article>
+
+  <!-- SKETSA PANORAMA -->
+  <article class="card">
+   <div class="card-head"><div class="card-icon">🏞️</div><div><small>SCOUTING SKILL 08</small><h3>SKETSA PANORAMA</h3></div></div>
+   <ul>
+    <li><input type="checkbox" class="task"><span>Memahami pengertian dan fungsi sketsa panorama.</span></li>
+    <li><input type="checkbox" class="task"><span>Mengenal garis cakrawala dan objek pengamatan.</span></li>
+    <li><input type="checkbox" class="task"><span>Mengamati lingkungan sekitar dengan teliti.</span></li>
+    <li><input type="checkbox" class="task"><span>Mampu menggambar sketsa panorama sederhana.</span></li>
+    <li><input type="checkbox" class="task"><span>Memberikan keterangan arah dan objek pada hasil sketsa.</span></li>
+   </ul>
+   <div class="card-footer"><span>OBSERVATION & DRAWING</span><strong>PANORAMA</strong></div>
+  </article>
+
+ </div>
+</section>
+
+<section>
+ <div class="quote">
+  <h2>SETIA SIAP SEDIA</h2>
+  <p>PRAMUKA GARUDA ADALAH TINGKATAN TERTINGGI DALAM GERAKAN KEPRAMUKAAN</p>
+  <br>
+  <strong style="color:#ffd166;letter-spacing:3px">
+   SATYAKU KUDARMAKAN<br>DARMAKU KUBAKTIKAN
+  </strong>
+ </div>
+</section>
+
+<footer>
+ <strong>PENCAPAIAN PRAMUKA GARUDA 2027</strong><br>
+ OUTPUT • OUTCOME • BENEFIT  • IMPACT <br>
+ © 2027 |
+</footer>
+
+<div class="music-control">
+ <button onclick="toggleMusic()" id="musicFloat">♪ MUSIK OFF</button>
+</div>
+
+<script>
+// MUSIK
+const audio=document.getElementById("audio");
+let playing=false;
+
+function toggleMusic(){
+ if(!playing){
+  audio.play().then(()=>{
+   playing=true;
+   updateMusic();
+  }).catch(()=>{
+   alert("Periksa file musik.mp3 di folder website.");
+  });
+ }else{
+  audio.pause();
+  playing=false;
+  updateMusic();
+ }
+}
+function updateMusic(){
+ const text=playing?"♪ MUSIK ON":"♪ MUSIK OFF";
+ document.getElementById("musicNav").textContent=text;
+ document.getElementById("musicFloat").textContent=text;
+}
+
+// CHECKLIST SELURUH BAB
+const tasks=document.querySelectorAll(".task");
+const storageKey="garuda_2027_all_tasks_v2";
+
+function loadTasks(){
+ let saved={};
+ try{saved=JSON.parse(localStorage.getItem(storageKey)||"{}")}catch(e){}
+
+ tasks.forEach((task,index)=>{
+  task.checked=saved[index]===true;
+  task.addEventListener("change",()=>{
+   saveTasks();
+   updateProgress();
+  });
+ });
+}
+
+function saveTasks(){
+ const saved={};
+ tasks.forEach((task,index)=>saved[index]=task.checked);
+ localStorage.setItem(storageKey,JSON.stringify(saved));
+}
+
+function updateProgress(){
+ const done=[...tasks].filter(t=>t.checked).length;
+ const total=tasks.length;
+ const percent=total?Math.round(done/total*100):0;
+
+ document.getElementById("progress").style.width=percent+"%";
+ document.getElementById("percentage").textContent=percent+"%";
+ document.getElementById("progressInfo").textContent=
+ done+" dari "+total+" target telah diselesaikan.";
+}
+
+loadTasks();
+updateProgress();
+
+// PARTIKEL
+const canvas=document.getElementById("particles");
+const ctx=canvas.getContext("2d");
+let particles=[];
+
+function resize(){
+ const ratio=Math.min(window.devicePixelRatio||1,2);
+ canvas.width=window.innerWidth*ratio;
+ canvas.height=window.innerHeight*ratio;
+ canvas.style.width=window.innerWidth+"px";
+ canvas.style.height=window.innerHeight+"px";
+ ctx.setTransform(ratio,0,0,ratio,0,0);
+}
+
+function createParticles(){
+ particles=[];
+ const count=Math.min(85,Math.floor(window.innerWidth/9));
+ for(let i=0;i<count;i++){
+  particles.push({
+   x:Math.random()*window.innerWidth,
+   y:Math.random()*window.innerHeight,
+   size:Math.random()*2+0.5,
+   speed:Math.random()*.6+.2,
+   alpha:Math.random()*.6+.2
+  });
+ }
+}
+
+window.addEventListener("resize",()=>{
+ resize();
+ createParticles();
+});
+resize();
+createParticles();
+
+function animate(){
+ ctx.clearRect(0,0,window.innerWidth,window.innerHeight);
+ particles.forEach(p=>{
+  p.y-=p.speed;
+  if(p.y<0){
+   p.y=window.innerHeight;
+   p.x=Math.random()*window.innerWidth;
+  }
+  ctx.beginPath();
+  ctx.arc(p.x,p.y,p.size,0,Math.PI*2);
+  ctx.fillStyle="rgba(255,209,102,"+p.alpha+")";
+  ctx.fill();
+ });
+ requestAnimationFrame(animate);
+}
+animate();
+</script>
+</body>
+</html>
